@@ -1,0 +1,61 @@
+############### CREACIÓN DE DICCIONARIOS ###############
+
+sensors = {"living room": 21, "kitchen": 23}
+print(sensors)
+
+translations = {"mountain": "orod", "bread": "bass"}
+print(translations)
+
+# ERROR: las claves deben ser inmutables (listas no sirven)
+# powers = {[1,2,3]: 2}
+
+# Valores pueden ser listas
+children = {"Corleone": ["Sonny","Fredo","Michael"]}
+print(children)
+
+# Diccionario vacío
+my_empty_dictionary = {}
+print(my_empty_dictionary)
+
+# Agregar elemento
+menu = {"oatmeal": 3, "toast": 6}
+menu["cheesecake"] = 8
+print(menu)
+
+# Reemplazar valor existente
+menu["oatmeal"] = 5
+print(menu)
+
+# Agregar varios elementos
+sensors.update({"pantry":22, "patio":34})
+print(sensors)
+
+############### DICT COMPREHENSION ###############
+
+names = ['Jenny', 'Alexus', 'Sam']
+heights = [61, 70, 67]
+
+# zip une listas en pares y comprehension crea el diccionario
+students = {k:v for k,v in zip(names, heights)}
+print(students)
+
+############### EJEMPLO MÁS COMPLETO ###############
+
+songs = ["Imagine","Respect","Satisfaction"]
+playcounts = [44, 89, 29]
+
+plays = {k:v for k,v in zip(songs, playcounts)}
+print(plays)
+
+# agregar y modificar
+plays.update({"Purple Haze":1})
+plays.update({"Respect":94})
+print(plays)
+
+# diccionario dentro de otro
+library = {
+    "Best Songs": plays,
+    "Chill": {}
+}
+
+print(library)
