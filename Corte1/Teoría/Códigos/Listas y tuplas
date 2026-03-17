@@ -1,0 +1,93 @@
+################# LISTAS ####################
+
+# Se crea una lista con varios colores.
+# Una lista es una estructura ordenada y modificable.
+my_lista = ['Rojo', 'Azul', 'Amarillo', 'Naranja', 'Violeta', 'Verde']
+
+# Se imprime la lista completa, su tipo y un elemento específico.
+print(my_lista)
+print(type(my_lista))
+print(my_lista[2])   # acceso por índice (empieza desde 0)
+
+# Operaciones básicas: tamaño y sublistas (slicing)
+print("my_lista size: ", len(my_lista))
+print(my_lista[0:2])   # desde índice 0 hasta 1
+print(my_lista[:2])    # forma equivalente
+
+# Agregar elementos
+my_lista.append('Blanco')      # añade al final
+print(my_lista)
+
+# Insertar en posición específica
+my_lista.insert(3, 'Negro')
+print(my_lista)
+
+# Agregar varios elementos desde otra lista
+my_lista.extend(['Marron', 'Gris'])
+print(my_lista)
+
+# Buscar posición de un elemento
+print(my_lista.index('Azul'))
+
+# Eliminar por valor
+my_lista.remove('Marron')
+print(my_lista)
+
+# Insertar nuevamente
+my_lista.insert(8, 'Marron')
+print(my_lista)
+
+# Eliminar el último elemento
+print(my_lista.pop())
+
+size = len(my_lista)
+print("size = ", size)
+
+# Repetir el contenido de la lista
+my_lista_3 = my_lista * 3
+print("my_lista_3: ", my_lista_3)
+
+# Ordenar lista (sort modifica la lista original)
+my_listaSort = my_lista.sort()
+print(my_listaSort)   # imprime None porque sort no retorna lista
+
+# Ordenar lista numérica
+my_NumList = [10, 9, 8, 7, 6 , 5 , 4, 3, 2, 1]
+my_NumList.sort()
+print(my_NumList)
+
+# Orden descendente
+my_NumList.sort(reverse = True)
+print(my_NumList)
+
+
+
+################# TUPLAS ####################
+
+# Las tuplas son similares a listas pero inmutables.
+my_tupla = tuple(my_lista)
+print("my_tuple: ", my_tupla)
+
+# Acceso por índice
+print(my_tupla[0])
+print(my_tupla[2])
+
+# Verificar pertenencia y contar
+print('Rojo' in my_tupla)
+print(my_tupla.count('Rojo'))
+
+# Esto NO es una tupla unitaria sino un string
+my_tupla_unitaria = ('Blanco')
+print(my_tupla_unitaria)
+
+# Empaquetado automático
+my_tupla = 'Gaspar', 5, 8, 1999
+print(my_tupla)
+
+# Desempaquetado
+nombre, dia, mes, año = my_tupla
+print(nombre, dia, mes, año)
+
+# Convertir tupla a lista
+my_lista2 = list(my_tupla)
+print(my_lista2)
