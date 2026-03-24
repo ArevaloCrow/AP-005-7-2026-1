@@ -1,0 +1,40 @@
+def ComprobarImpar():
+
+    a = input("Porfavor, ingrese un valor \n")
+
+    aInt = int(a)
+
+    mod = aInt%2   
+
+    if (mod==0):
+            print ("El número es par \n")
+    else:
+            print ("El numero es impar \n")
+
+    print("Desea continuar? En caso de sí, presione 1. En caso de no, presione 0. \n") 
+    switch()
+
+   
+def switch():
+    
+    global opt
+    opt = input("Seleccione una opción\n")
+    opt = int(opt)
+    
+    if (opt == 0):
+           exit()  
+    else:
+        if (opt == 1):
+            ComprobarImpar()
+        else: 
+            ComprobaciónOpt()
+    
+    
+def ComprobaciónOpt():  
+        print("Seleccione exclusivamente 1 o 0, porfavor.")
+        switch()
+    
+while True:
+    ComprobarImpar()
+    switch()
+
