@@ -1,0 +1,86 @@
+#Tupla de categorías para objetos 
+categorias = ("Tecnologia", "Ropa", "Alimentos")
+
+#Lista de productos en la que después tendrá asociados ciertos productos
+productos = []
+
+print("BIENVENIDO AL SISTEMA DE INVENTARIO")
+
+opcion = ""
+
+while opcion != "5":
+
+    print("\nMENU")
+    print("1. Agregar producto")
+    print("2. Mostrar productos")
+    print("3. Buscar producto")
+    print("4. Eliminar producto")
+    print("5. Salir")
+
+    opcion = input("Seleccione una opcion: ")
+
+    # 1. AGREGAR PRODUCTO
+    if opcion == "1":
+        
+        # Asociación de características al objeto (Diccionario)
+        
+        codigo = input("Codigo: ")
+        nombre = input("Nombre: ")
+        precio = float(input("Precio: "))
+        cantidad = int(input("Cantidad: "))
+
+        print("Categorias:", categorias)
+        categoria = input("Categoria: ")
+
+        # validación básica
+        if categoria not in categorias:
+            print("Categoria invalida")
+        else:
+            producto = {
+                "codigo": codigo,
+                "nombre": nombre,
+                "precio": precio,
+                "cantidad": cantidad,
+                "categoria": categoria
+            }
+
+            productos.append(producto)
+            print("Producto agregado")
+
+    # 2. MOSTRAR TODOS LOS PRODUCTOS
+    elif opcion == "2":
+        if len(productos) == 0:
+            print("No hay productos")
+        else:
+            for p in productos:
+                print(p)
+
+    # 3. BUSCAR PRODUCTO EN ESPECÍFICO
+    elif opcion == "3":
+        buscar = input("Codigo a buscar: ")
+        encontrado = False
+
+        # Si el código se encuentra en la lista, se encuentra y muestra el producto
+        for p in productos:
+            if p["codigo"] == buscar:
+                print(p)
+                encontrado = True
+        #Si el código no se encuentra en la lista, manda "error"
+        if encontrado == False:
+            print("No encontrado")
+
+    # 4. ELIMINAR UN PRODUCTO
+    elif opcion == "4":
+        eliminar = input("Codigo a eliminar: ")
+
+        for p in productos:
+            if p["codigo"] == eliminar:
+                productos.remove(p)
+                print("Eliminado")
+
+    # 5. SALIR
+    elif opcion == "5":
+        print("Adios")
+
+    else:
+        print("Opcion invalida")
